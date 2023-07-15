@@ -24,8 +24,6 @@ function App() {
       <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
       <Route/>
 
-
-
       </Routes>
 
     </BrowserRouter>

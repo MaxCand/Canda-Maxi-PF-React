@@ -19,8 +19,8 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
 
-    console.log(item)
-    console.log(itemId)
+    // console.log(item)
+    // console.log(itemId)
 
     useEffect (() => {
         pedirDatos()
@@ -41,7 +41,7 @@ const ItemDetailContainer = () => {
             
         {
             loading
-            ? <h2>Loading...</h2>
+            ? <h2 className="text-center">Loading...</h2>
             :<ItemDetail {...item}/>
         
         
