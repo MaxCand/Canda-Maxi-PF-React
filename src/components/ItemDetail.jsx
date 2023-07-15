@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 
 
 const ItemDetail = ({id, precio, img, categoria, nombre, descripcion}) => {

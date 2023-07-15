@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const ItemList = ({items}) => {
 
     return (
@@ -14,7 +16,7 @@ const ItemList = ({items}) => {
                     <img src={prod.img} alt={prod.nombre}/>
                     <p className="producto__descripcion">Genero: {prod.categoria}</p>
                     <p>Precio: ${prod.precio}</p>
-                    {/* <Link className="btn btn-primary" to={`/item/${prod.id}`}>Más info</Link> */}
+                    <Link className="btn btn-primary" to={`/item/${prod.id}`}>Más info</Link>
                     </div>
                 ))
             }
