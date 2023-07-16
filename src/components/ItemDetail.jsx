@@ -1,15 +1,21 @@
 import { ItemQuantitySelector } from "./ItemQuantitySelector"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) => {
 
     const [cantidad, setCantidad] = useState(1)
+    const navigate = useNavigate()
 
     const handleAgregar = () => {
         const item = {
             id, precio, img, categoria, nombre, descripcion, stock, cantidad
         }
         console.log(item)
+    }
+
+    const handleVolver = () => {
+        navigate(-1)
     }
 
     return (
@@ -25,6 +31,10 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
      <p>Precio: ${precio}</p>
      <p>Descripcion: {descripcion}</p>
      <ItemQuantitySelector max={stock} cantidad={cantidad} setCantidad={setCantidad} handleAgregar={handleAgregar}/>
+
+        <hr />
+        <hr />
+    <button onClick={handleVolver} className="btn btn-primary">Volver</button>
      </div>
 }
 
