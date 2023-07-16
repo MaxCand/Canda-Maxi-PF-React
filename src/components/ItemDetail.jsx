@@ -1,9 +1,14 @@
 import { ItemQuantitySelector } from "./ItemQuantitySelector"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { CartContext } from "./CartContext"
+import { Link } from "react-router-dom"
 
 const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) => {
 
+
+    const { agregarAlCarrito, isInCart} = useContext(CartContext)
+    console.log(isInCart(id))
     const [cantidad, setCantidad] = useState(1)
     const navigate = useNavigate()
 
@@ -11,7 +16,9 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
         const item = {
             id, precio, img, categoria, nombre, descripcion, stock, cantidad
         }
-        console.log(item)
+
+       agregarAlCarrito(item)
+
     }
 
     const handleVolver = () => {
@@ -30,7 +37,18 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
      <p className="producto__descripcion">Genero: {categoria}</p>
      <p>Precio: ${precio}</p>
      <p>Descripcion: {descripcion}</p>
-     <ItemQuantitySelector max={stock} cantidad={cantidad} setCantidad={setCantidad} handleAgregar={handleAgregar}/>
+
+
+    {
+        isInCart(id)
+        ? <Link className="btn btn-success" to="/cart">Terminar mi compra</Link>
+        :  <ItemQuantitySelector 
+        max={stock} 
+        cantidad={cantidad} 
+        setCantidad={setCantidad} 
+        handleAgregar={handleAgregar}
+        />
+    }
 
         <hr />
         <hr />
