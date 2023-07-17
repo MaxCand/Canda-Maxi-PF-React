@@ -16,12 +16,11 @@ if (cart.length === 0) {
         </div>
     )
 }
-  
+
 return (
         <div className="container my-5">
-              
                 <><h2>Tu compra: </h2>
-           <hr />
+                <hr />
 
         {
             cart.map((prod) => (
@@ -43,8 +42,7 @@ return (
         </div></>
             
 
-        </div>
-     )
+        </div>)
 }
 
 export default Cart
