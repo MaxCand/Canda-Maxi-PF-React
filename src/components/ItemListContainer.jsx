@@ -3,6 +3,8 @@ import { useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 import ItemList from "./ItemList"
 import { pedirDatos } from "../Utilidades/pedirDatos"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../firebase/config"
 
 const ItemListContainer = () => {
 
@@ -16,11 +18,11 @@ const ItemListContainer = () => {
 
         setLoading(true)
 
-        pedirDatos()
-        .then((res) => {
-            if(!categoria){
-            setProductos(res)}
-            else {setProductos( res.filter((juego) => juego.categoria === categoria)       )}
+        const productosRef = collection(db, "productos")
+        getDocs(productosRef)
+        .then((resp) => {
+            const items = resp.docs.map((doc) => ({...doc.data(), id: doc.id}))
+            setProductos(items)
         })
         .catch((error) => {
             console.error(error)})
@@ -42,3 +44,10 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer
+
+// pedirDatos()
+        // .then((res) => {
+        //     if(!categoria){
+        //     setProductos(res)}
+        //     else {setProductos( res.filter((juego) => juego.categoria === categoria)       )}
+        // })
