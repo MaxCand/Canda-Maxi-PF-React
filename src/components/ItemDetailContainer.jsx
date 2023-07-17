@@ -3,6 +3,8 @@ import { useEffect } from "react"
 import MOCK_PRODUCTOS from "../data/MOCK_PRODUCTOS.json"
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../firebase/config"
 
 const pedirDatos = () => {
     return new Promise ((resolve, reject) => {
@@ -23,9 +25,14 @@ const ItemDetailContainer = () => {
     // console.log(itemId)
 
     useEffect (() => {
-        pedirDatos()
-        .then((res) => {
-            setItem(res.find((prod) => prod.id === Number(itemId)))
+        
+        const itemRef = doc(db, "productos", itemId)
+        getDoc(itemRef)
+        .then((doc) => {
+            setItem({
+                ...doc.data(),
+                id: doc.id
+            })
         })
         .catch((error) => {
             console.error(error)
