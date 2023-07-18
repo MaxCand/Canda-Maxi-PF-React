@@ -4,12 +4,22 @@ export const ItemQuantitySelector = ({max, cantidad, setCantidad, handleAgregar}
 
 
     const handleSumar = () => {
-       cantidad < max && setCantidad(cantidad + 1)
+      {
+        cantidad < max
+        ? setCantidad(cantidad + 1)
+        : alert("Cantidad maxima alcanzada")
+      }
+       
     }
 
 
     const handleRestar = () => {
-      cantidad > 1 &&  setCantidad(cantidad - 1)
+      {
+        cantidad > 1
+        ? setCantidad(cantidad - 1)
+        : alert("Cantidad minima seleccionada")
+      }
+       
     }
 
   
