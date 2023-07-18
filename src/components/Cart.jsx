@@ -39,6 +39,7 @@ return (
             <h5>Total: ${totalCompra()}</h5>
             <hr />
             <button onClick={vaciarCarrito} className="btn btn-danger">Vaciar Carrito</button>
+            <Link className="btn btn-success mx-2" to="/checkout">Finalizar compra</Link>
         </div></>
             
 
