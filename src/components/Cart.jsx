@@ -2,6 +2,8 @@ import { useContext } from "react"
 import { CartContext } from "./CartContext"
 import {LuTrash2} from "react-icons/lu"
 import { Link } from "react-router-dom"
+import Card from 'react-bootstrap/Card';
+
 
 const Cart = () => {
 

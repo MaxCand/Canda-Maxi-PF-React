@@ -3,6 +3,8 @@ import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "./CartContext"
 import { Link } from "react-router-dom"
+import Card from 'react-bootstrap/Card';
+
 
 const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) => {
 
@@ -31,12 +33,15 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
 
 {
      
-     <div className="col-3 mb-3 text-center">
-     <h4>{nombre}</h4>
+     <Card className="text-center" border="primary" style={{ width: '18rem' }}>
+     <Card.Header>{nombre}</Card.Header>
      <img src={img} alt={nombre}/>
      <p className="producto__descripcion">Genero: {categoria}</p>
      <p>Precio: ${precio}</p>
-     <p>Descripcion: {descripcion}</p>
+     <Card.Text>
+     Descripcion: {descripcion}
+          </Card.Text>
+     <p></p>
 
 
     {
@@ -51,9 +56,8 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
     }
 
         <hr />
-        <hr />
     <button onClick={handleVolver} className="btn btn-primary">Volver</button>
-     </div>
+     </Card>
 }
 
 
