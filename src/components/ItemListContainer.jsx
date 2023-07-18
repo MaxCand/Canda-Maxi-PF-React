@@ -1,8 +1,7 @@
 import { useState } from "react"
 import { useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
-import { pedirDatos } from "../Utilidades/pedirDatos"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../firebase/config"
 
@@ -49,9 +48,3 @@ const ItemListContainer = () => {
 
 export default ItemListContainer
 
-// pedirDatos()
-        // .then((res) => {
-        //     if(!categoria){
-        //     setProductos(res)}
-        //     else {setProductos( res.filter((juego) => juego.categoria === categoria)       )}
-        // })

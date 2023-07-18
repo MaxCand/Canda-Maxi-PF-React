@@ -1,12 +1,13 @@
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
+import { GiAbstract006 } from "react-icons/gi";
 
 const NavBar = () => {
     return (
             <header className="header">
                 <div className="header__container">
                     <div className="header__Brand">
-                    <Link to="/">Chronos-store </Link>
+                    <Link className="iconoPP" to="/"> <GiAbstract006/> </Link>
                     </div>
                     <div>
                     <nav className="header__navBar">
