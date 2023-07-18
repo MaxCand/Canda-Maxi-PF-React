@@ -97,3 +97,12 @@ text-align: center;
   border-color: black;
   border-radius: 3px;
 }
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.just-center{
+  display: flex;
+  justify-content: center;
+}

@@ -20,13 +20,13 @@ if (cart.length === 0) {
 }
 
 return (
-        <div className="container-fluid row my-5">
-                <><h2>Tu resumen de compra: </h2>
+        <div className="container-fluid row my-5 just-center">
+                <><h2 className="text-center">Tu resumen de compra: </h2>
                 <hr />
 
         {
             cart.map((prod) => (
-                <Card className="text-center mt-2 mb-2" border="primary" style={{ width: '18rem' }} key={prod.id}>
+                <Card className="text-center margin-left mt-2 mb-2" border="primary" style={{ width: '18rem' }} key={prod.id}>
                     <Card.Header>{prod.nombre}</Card.Header>
                     <Card.Img variant="top" src={prod.img} alt={prod.nombre}/>
                     <Card.Body>
@@ -40,10 +40,13 @@ return (
         }
 
         <div>
-            <h5>Total: ${totalCompra()}</h5>
+            <h5 className="mt-3 just-center">Total: ${totalCompra()}</h5>
             <hr />
-            <button onClick={vaciarCarrito} className="btn btn-danger">Vaciar Carrito</button>
+            <div className="just-center">
+            <button onClick={vaciarCarrito} 
+            className="btn btn-danger">Vaciar Carrito</button>
             <Link className="btn btn-success mx-2" to="/checkout">Finalizar compra</Link>
+            </div>
         </div></>
             
 
