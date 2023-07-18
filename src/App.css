@@ -91,3 +91,9 @@ text-align: center;
 .iconoPP {
   font-size:x-large;
 }
+
+.borde-card {
+  border: 1px;
+  border-color: black;
+  border-radius: 3px;
+}

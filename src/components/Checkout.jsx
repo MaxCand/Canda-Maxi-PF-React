@@ -75,7 +75,7 @@ if (cart.length === 0) {
 
     return (
         <div className="container my-5">
-           <h2>Resumen de compra</h2>
+           <h2>Finalizar compra</h2>
            <hr />
 
            <form onSubmit={handleSubmit}>
