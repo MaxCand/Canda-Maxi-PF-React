@@ -56,7 +56,7 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
     }
 
         <hr />
-    <button onClick={handleVolver} className="btn btn-primary">Volver</button>
+    <button onClick={handleVolver} className="btn btn-primary mb-2">Volver</button>
      </Card>
 }
 
