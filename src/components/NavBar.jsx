@@ -6,7 +6,7 @@ const NavBar = () => {
             <header className="header">
                 <div className="header__container">
                     <div className="header__Brand">
-                    <Link to="/">Chrono-store </Link>
+                    <Link to="/">Chronos-store </Link>
                     </div>
                     <div>
                     <nav className="header__navBar">
