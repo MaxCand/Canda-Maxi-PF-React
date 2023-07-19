@@ -6,7 +6,7 @@ const ItemList = ({items}) => {
     return (
         <div>
 
-<h2 className="text-center">Lista de juegos</h2>
+<h2 className="text-center">LISTA DE JUEGOS</h2>
             <hr />
             <div className="containter-fluid row just-center my-5">
 
