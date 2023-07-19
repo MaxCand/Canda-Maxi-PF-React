@@ -36,7 +36,7 @@ const ItemDetail = ({id, precio, img, categoria, nombre, descripcion, stock}) =>
      <Card className="text-center" border="primary" style={{ width: '25rem' }}>
      <Card.Header>{nombre}</Card.Header>
      <img src={img} alt={nombre}/>
-     <p className="producto__descripcion">Genero: {categoria}</p>
+     <p >Genero: {categoria}</p>
      <p>Precio: ${precio}</p>
      <Card.Text>
      Descripcion: {descripcion}
